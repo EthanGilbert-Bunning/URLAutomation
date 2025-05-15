@@ -3,7 +3,18 @@ This module contains the definition for the SSLRecord class."""
 
 from dataclasses import dataclass
 from datetime import datetime
-from typing import List
+from typing import List, Optional
+
+
+@dataclass
+class SSLRecordDBMeta:
+    """Class representing the database metadata for an SSL record."""
+
+    ## Primary key in the table.
+    certificate_id: int
+
+    ## Link to entry in domains table.
+    domain_id: int
 
 
 @dataclass
@@ -33,6 +44,9 @@ class SSLRecord:
 
     ## Certificate Serial number
     serial_number: str
+
+    ## Database metadata. This will only be available when retrieved from the database.
+    meta: Optional[SSLRecordDBMeta] = None
 
     def __str__(self):
         """String representation of the SSLRecord object."""
