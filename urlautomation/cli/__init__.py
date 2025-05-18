@@ -3,8 +3,8 @@ Main package for the CLI of the URL Automation project.
 This package contains the code for the Command Line Interface (CLI)
 """
 
+from urlautomation.cli.commands import ALL_SUBCOMMANDS
 from urlautomation.database.manager import DatabaseManager
-from urlautomation.apis import crtsh
 
 from argparse import ArgumentParser, Namespace
 
@@ -30,13 +30,12 @@ class CommandLine:
             default="config.json",
             help="Path to the configuration file",
         )
-        # temporary
-        parser.add_argument(
-            "-f",
-            "--fetch",
-            action="store_true",
-            help="Fetch SSL records from crt.sh and store them in the database",
-        )
+        subparsers = parser.add_subparsers(dest="command", required=True)
+
+        for subcommand, subcommand_class in ALL_SUBCOMMANDS.items():
+            subparser = subparsers.add_parser(subcommand, help=subcommand_class.__doc__)
+            subcommand_class.add_arguments(subparser)
+
         return parser.parse_args()
 
     def run(self):
@@ -47,32 +46,15 @@ class CommandLine:
 
         self._database = DatabaseManager(self._config["db_path"])
 
-        if self._args.fetch:
-            try:
-                records = crtsh.fetch_records("corp.mediatek.com")
-                self._logger.info(f"Fetched {len(records)} records from crt.sh.")
-            except:
-                self._logger.exception("Error fetching records from crt.sh.")
-
-            try:
-                with self._database:
-                    self._database.add_ssl_records(records)
-                    self._logger.info(f"Added {len(records)} records to the database.")
-            except:
-                self._logger.exception("Error adding records to the database.")
+        command_class = ALL_SUBCOMMANDS[self._args.command]
+        command = getattr(self._args, command_class.__name__, None)
+        command_instance = command_class(self._args, self._config, self._database)
 
         try:
-            with self._database:
-                test = self._database.fetch_ssl_records(
-                    criteria="WHERE datetime('now') BETWEEN datetime(not_before) AND datetime(not_after)"
-                )
-                self._logger.info(
-                    f"Found {len(test)} records in with valid certificates."
-                )
-                for record in test:
-                    self._logger.info(record)
-        except:
-            self._logger.exception("Error fetching records from the database.")
+            command_instance.execute(command)
+        except Exception as e:
+            self._logger.exception(e)
+            exit(1)
 
 
 def main():

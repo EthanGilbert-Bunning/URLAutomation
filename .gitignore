@@ -175,3 +175,6 @@ cython_debug/
 
 # Database files
 *.db
+
+# Primary config file
+config.json
