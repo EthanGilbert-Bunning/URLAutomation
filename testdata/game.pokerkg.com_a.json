@@ -1,0 +1,296 @@
+[
+    {
+        "first_seen": "2021-12-25",
+        "last_seen": "2022-02-05",
+        "organizations": [
+            "Amazon.com, Inc."
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "99.83.154.118",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2021-03-10",
+        "last_seen": "2021-09-25",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "207.46.129.68",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2021-03-03",
+        "last_seen": "2021-03-10",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.81.191",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2021-02-05",
+        "last_seen": "2021-03-03",
+        "organizations": [
+            "Ballwan Technology Co., Limited"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.125.115.200",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2021-01-11",
+        "last_seen": "2021-02-04",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-17",
+        "last_seen": "2021-01-10",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-12",
+        "last_seen": "2020-11-15",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.81.147",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-10",
+        "last_seen": "2020-11-12",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-10-28",
+        "last_seen": "2020-11-09",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-10-22",
+        "last_seen": "2020-10-28",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.81.147",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-07-13",
+        "last_seen": "2020-10-22",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-07-09",
+        "last_seen": "2020-07-12",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "13.94.31.213",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-06-29",
+        "last_seen": "2020-07-09",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "52.175.11.102",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-06-16",
+        "last_seen": "2020-06-29",
+        "organizations": [
+            "HUAWEI CLOUDS"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "119.8.114.113",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-06-12",
+        "last_seen": "2020-06-15",
+        "organizations": [
+            "HUAWEI CLOUDS"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "119.8.114.113",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-05-19",
+        "last_seen": "2020-06-12",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "40.83.101.185",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-04-16",
+        "last_seen": "2020-05-19",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "65.52.174.76",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-03-31",
+        "last_seen": "2020-04-16",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "40.83.101.185",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-03-11",
+        "last_seen": "2020-03-30",
+        "organizations": [
+            "Microsoft Corporation"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "13.94.31.213",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-02-23",
+        "last_seen": "2020-03-11",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.99.51.173",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-02-18",
+        "last_seen": "2020-02-23",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.99.51.192",
+                "ip_count": 0
+            }
+        ]
+    }
+]
