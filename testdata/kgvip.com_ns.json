@@ -1,0 +1,315 @@
+[
+    {
+        "first_seen": "2020-08-18",
+        "last_seen": "2025-05-19",
+        "organizations": [
+            "Cloudflare, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "henry.ns.cloudflare.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "jean.ns.cloudflare.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-03-29",
+        "last_seen": "2020-08-17",
+        "organizations": [
+            "Cloudflare, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "henry.ns.cloudflare.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "jean.ns.cloudflare.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2017-03-09",
+        "last_seen": "2020-03-28",
+        "organizations": [
+            "Cloudflare, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "henry.ns.cloudflare.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "jean.ns.cloudflare.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2017-03-02",
+        "last_seen": "2017-03-09",
+        "organizations": [
+            "GoDaddy"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns47.domaincontrol.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns48.domaincontrol.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2017-02-26",
+        "last_seen": "2017-03-02",
+        "organizations": [
+            "Amazon.com, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "domain-for-sale.hugedomainsdns.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "forsale.hugedomainsdns.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2015-04-29",
+        "last_seen": "2017-02-26",
+        "organizations": [
+            "Amazon.com, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "push.hugedomains.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "push2.hugedomains.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2013-11-22",
+        "last_seen": "2015-04-29",
+        "organizations": [
+            "Amazon.com, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "nsg1.namebrightdns.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "nsg2.namebrightdns.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2013-11-19",
+        "last_seen": "2013-11-22",
+        "organizations": [
+            "Amazon.com, Inc."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns1.namebrightdns.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns2.namebrightdns.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2013-01-08",
+        "last_seen": "2013-11-19",
+        "organizations": [
+            "Trellian Pty. Limited"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns1.above.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns2.above.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2012-10-12",
+        "last_seen": "2013-01-08",
+        "organizations": [
+            "RcodeZero Anycast DNS"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns1.monikerdns.net",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns2.monikerdns.net",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns3.monikerdns.net",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns4.monikerdns.net",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2012-08-05",
+        "last_seen": "2012-10-11",
+        "organizations": [
+            "UCLOUD INFORMATION TECHNOLOGY (HK) LIMITED"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "dns5.expirenotification.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "dns6.expirenotification.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2012-01-09",
+        "last_seen": "2012-08-05",
+        "organizations": [
+            "Shenzhen Tencent Computer Systems Company Limited",
+            "CHINA UNICOM China169 Backbone",
+            "CHINANET Nanjing Jishan IDC network",
+            "No.31,Jin-rong Street",
+            "China Mobile communications corporation",
+            "China Unicom Guangdong IP network"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns11.xincache.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns12.xincache.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2009-08-04",
+        "last_seen": "2012-01-09",
+        "organizations": [
+            "Shenzhen Tencent Computer Systems Company Limited"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns.xinnet.cn",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns.xinnetdns.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2009-07-05",
+        "last_seen": "2009-08-04",
+        "organizations": [
+            "Tucows.com Co."
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "dns1.name-services.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "dns2.name-services.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "dns3.name-services.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "dns4.name-services.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "dns5.name-services.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2009-04-25",
+        "last_seen": "2009-07-05",
+        "organizations": [
+            "UCLOUD INFORMATION TECHNOLOGY (HK) LIMITED"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "ns3.eachnic.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "ns4.eachnic.com",
+                "nameserver_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2008-09-01",
+        "last_seen": "2009-04-25",
+        "organizations": [
+            "Hangzhou Alibaba Advertising"
+        ],
+        "type": "ns",
+        "values": [
+            {
+                "nameserver": "dns23.hichina.com",
+                "nameserver_count": 0
+            },
+            {
+                "nameserver": "dns24.hichina.com",
+                "nameserver_count": 0
+            }
+        ]
+    }
+]

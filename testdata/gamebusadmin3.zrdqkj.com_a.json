@@ -1,0 +1,170 @@
+[
+    {
+        "first_seen": "2024-05-16",
+        "last_seen": "2025-05-19",
+        "organizations": [
+            "DXTL Tseung Kwan O Service"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "154.215.222.145",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2023-01-08",
+        "last_seen": "2024-05-16",
+        "organizations": [
+            "DXTL Tseung Kwan O Service"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "38.238.164.19",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2022-12-03",
+        "last_seen": "2023-01-08",
+        "organizations": [
+            "CTG Server Limited"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "27.124.11.39",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2022-02-14",
+        "last_seen": "2022-10-22",
+        "organizations": [
+            "EGIHosting"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "104.164.21.83",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-18",
+        "last_seen": "2021-02-01",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-12",
+        "last_seen": "2020-11-18",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.81.147",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-06",
+        "last_seen": "2020-11-10",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-11-03",
+        "last_seen": "2020-11-05",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-10-30",
+        "last_seen": "2020-11-01",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.81.147",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-10-28",
+        "last_seen": "2020-10-30",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-10-22",
+        "last_seen": "2020-10-26",
+        "organizations": [
+            "GREYPANEL PTE LTD"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.81.147",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2020-08-01",
+        "last_seen": "2020-10-22",
+        "organizations": [
+            "Voxility LLP"
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "103.118.80.50",
+                "ip_count": 0
+            }
+        ]
+    }
+]

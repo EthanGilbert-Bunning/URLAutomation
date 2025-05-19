@@ -36,6 +36,16 @@ class DomainCommand(SubCommand):
             "fetch",
             help="Fetch information about a domain",
         )
+        fetch.add_argument(
+            "--dump",
+            action="store_true",
+            help="Dump the results of web requests to JSON files.",
+        )
+        fetch.add_argument(
+            "--simulate",
+            action="store_true",
+            help="Simulate the fetch based on hardcoded responses.",
+        )
         search = subparsers.add_parser(
             "search",
             help="Search for links to a domain",
@@ -110,11 +120,18 @@ class DomainCommand(SubCommand):
         assert DOMAIN_NAME_REGEX.match(domain_name), "Invalid domain name provided."
 
         try:
-            self._database.fetch_data(fetcher="crtsh", domains=domain_name)
+            self._database.fetch_data(
+                fetcher="crtsh",
+                domains=domain_name,
+                dump=self._args.dump,
+                simulate=self._args.simulate,
+            )
             self._database.fetch_data(
                 fetcher="securitytrails",
                 domains=domain_name,
-                api_key=self._config["securitytrails_api_key"],
+                apikey=self._config["securitytrails_api_key"],
+                dump=self._args.dump,
+                simulate=self._args.simulate,
             )
         except Exception as e:
             self._logger.exception(

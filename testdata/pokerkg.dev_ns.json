@@ -1,0 +1,72 @@
+{
+    "endpoint": "/v1/history/pokerkg.dev/dns/ns",
+    "pages": 1,
+    "records": [
+        {
+            "first_seen": "2021-12-24",
+            "last_seen": "2022-02-04",
+            "organizations": [
+                "Neustar Security Services",
+                "Akamai Connected Cloud",
+                "NeuStar, Inc."
+            ],
+            "type": "ns",
+            "values": [
+                {
+                    "nameserver": "dns1.registrar-servers.com",
+                    "nameserver_count": 0
+                },
+                {
+                    "nameserver": "dns101.registrar-servers.com",
+                    "nameserver_count": 0
+                },
+                {
+                    "nameserver": "dns102.registrar-servers.com",
+                    "nameserver_count": 0
+                },
+                {
+                    "nameserver": "dns2.registrar-servers.com",
+                    "nameserver_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2021-02-04",
+            "last_seen": "2021-12-24",
+            "organizations": [
+                "Cloudflare, Inc."
+            ],
+            "type": "ns",
+            "values": [
+                {
+                    "nameserver": "henry.ns.cloudflare.com",
+                    "nameserver_count": 0
+                },
+                {
+                    "nameserver": "jean.ns.cloudflare.com",
+                    "nameserver_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2019-12-26",
+            "last_seen": "2021-02-04",
+            "organizations": [
+                "Neustar Security Services",
+                "NeuStar, Inc."
+            ],
+            "type": "ns",
+            "values": [
+                {
+                    "nameserver": "dns1.registrar-servers.com",
+                    "nameserver_count": 0
+                },
+                {
+                    "nameserver": "dns2.registrar-servers.com",
+                    "nameserver_count": 0
+                }
+            ]
+        }
+    ],
+    "type": "ns"
+}

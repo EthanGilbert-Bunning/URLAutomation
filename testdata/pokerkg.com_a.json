@@ -1,0 +1,149 @@
+{
+    "endpoint": "/v1/history/pokerkg.com/dns/a",
+    "pages": 1,
+    "records": [
+        {
+            "first_seen": "2021-12-24",
+            "last_seen": "2025-05-12",
+            "organizations": [
+                "Amazon.com, Inc."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "99.83.154.118",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2019-12-26",
+            "last_seen": "2021-02-04",
+            "organizations": [
+                "Namecheap, Inc."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "192.64.119.15",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-11-15",
+            "last_seen": "2019-12-26",
+            "organizations": [
+                "Amazon.com, Inc."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "69.64.155.79",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-09-26",
+            "last_seen": "2008-10-08",
+            "organizations": [
+                "Tucows.com Co."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "216.40.33.31",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-09-24",
+            "last_seen": "2008-09-26",
+            "organizations": [
+                "Tucows.com Co."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "216.40.33.31",
+                    "ip_count": 0
+                },
+                {
+                    "ip": "216.40.33.251",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-09-20",
+            "last_seen": "2008-09-23",
+            "organizations": [
+                "Tucows.com Co."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "216.40.33.31",
+                    "ip_count": 0
+                },
+                {
+                    "ip": "216.40.33.251",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-09-13",
+            "last_seen": "2008-09-17",
+            "organizations": [
+                "Tucows.com Co."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "216.40.33.31",
+                    "ip_count": 0
+                },
+                {
+                    "ip": "216.40.33.251",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-09-08",
+            "last_seen": "2008-09-10",
+            "organizations": [
+                "Tucows.com Co."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "216.40.33.31",
+                    "ip_count": 0
+                },
+                {
+                    "ip": "216.40.33.251",
+                    "ip_count": 0
+                }
+            ]
+        },
+        {
+            "first_seen": "2008-09-02",
+            "last_seen": "2008-09-08",
+            "organizations": [
+                "Tucows.com Co."
+            ],
+            "type": "a",
+            "values": [
+                {
+                    "ip": "216.40.33.31",
+                    "ip_count": 0
+                }
+            ]
+        }
+    ],
+    "type": "a/ipv4"
+}
