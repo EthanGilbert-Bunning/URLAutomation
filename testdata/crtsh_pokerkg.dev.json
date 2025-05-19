@@ -3,7 +3,7 @@
         "issuer_ca_id": 157938,
         "issuer_name": "C=US, O=\\\"Cloudflare, Inc.\\\", CN=Cloudflare Inc ECC CA-3",
         "common_name": "sni.cloudflaressl.com",
-        "name_value": "*.pokerkg.dev\\npokerkg.dev",
+        "name_value": "*.pokerkg.dev\npokerkg.dev",
         "id": 4026157594,
         "entry_timestamp": "2021-02-03T19:22:01.355",
         "not_before": "2021-02-03T00:00:00",

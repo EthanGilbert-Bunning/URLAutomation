@@ -1,53 +1,48 @@
-{
-    "endpoint": "/v1/history/pokerkg.dev/dns/a",
-    "pages": 1,
-    "records": [
-        {
-            "first_seen": "2021-12-24",
-            "last_seen": "2022-02-04",
-            "organizations": [
-                "Amazon.com, Inc."
-            ],
-            "type": "a",
-            "values": [
-                {
-                    "ip": "99.83.154.118",
-                    "ip_count": 0
-                }
-            ]
-        },
-        {
-            "first_seen": "2021-02-04",
-            "last_seen": "2021-12-24",
-            "organizations": [
-                "Cloudflare, Inc."
-            ],
-            "type": "a",
-            "values": [
-                {
-                    "ip": "172.67.189.239",
-                    "ip_count": 0
-                },
-                {
-                    "ip": "104.21.10.47",
-                    "ip_count": 0
-                }
-            ]
-        },
-        {
-            "first_seen": "2019-12-26",
-            "last_seen": "2021-02-04",
-            "organizations": [
-                "Namecheap, Inc."
-            ],
-            "type": "a",
-            "values": [
-                {
-                    "ip": "162.255.119.230",
-                    "ip_count": 0
-                }
-            ]
-        }
-    ],
-    "type": "a/ipv4"
-}
+[
+    {
+        "first_seen": "2021-12-24",
+        "last_seen": "2022-02-04",
+        "organizations": [
+            "Amazon.com, Inc."
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "99.83.154.118",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2021-02-04",
+        "last_seen": "2021-12-24",
+        "organizations": [
+            "Cloudflare, Inc."
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "172.67.189.239",
+                "ip_count": 0
+            },
+            {
+                "ip": "104.21.10.47",
+                "ip_count": 0
+            }
+        ]
+    },
+    {
+        "first_seen": "2019-12-26",
+        "last_seen": "2021-02-04",
+        "organizations": [
+            "Namecheap, Inc."
+        ],
+        "type": "a",
+        "values": [
+            {
+                "ip": "162.255.119.230",
+                "ip_count": 0
+            }
+        ]
+    }
+]
