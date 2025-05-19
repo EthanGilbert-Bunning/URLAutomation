@@ -41,22 +41,23 @@ class CrtshDataFetcher(DataFetcher):
                     response_json = json.load(f)
                 responses.append((domain, self._deduplicate_results(response_json)))
         else:
-            request_params = {
-                "q": f"%{domain}%",
-                "output": "json",
-            }
-            response = requests.get("https://crt.sh", params=request_params)
-            response.raise_for_status()
-            response_json = response.json()
-            if kwargs.get("dump", False):
-                try:
-                    with open(f"crtsh_{domain}.json", "w") as f:
-                        json.dump(response_json, f, indent=2)
-                except:
-                    self._logger.exception(f"Failed to dump response for {domain}")
-                    self._logger.info(f"{response_json}")
+            for domain in domains:
+                request_params = {
+                    "q": f"%{domain}%",
+                    "output": "json",
+                }
+                response = requests.get("https://crt.sh", params=request_params)
+                response.raise_for_status()
+                response_json = response.json()
+                if kwargs.get("dump", False):
+                    try:
+                        with open(f"crtsh_{domain}.json", "w") as f:
+                            json.dump(response_json, f, indent=2)
+                    except:
+                        self._logger.exception(f"Failed to dump response for {domain}")
+                        self._logger.info(f"{response_json}")
 
-            responses.append((domain, self._deduplicate_results(response_json)))
+                responses.append((domain, self._deduplicate_results(response_json)))
 
         # Process responses, add new records to the database
         with self._database as session:
