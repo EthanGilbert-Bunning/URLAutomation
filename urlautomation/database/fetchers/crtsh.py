@@ -61,6 +61,7 @@ class CrtshDataFetcher(DataFetcher):
 
         # Process responses, add new records to the database
         with self._database as session:
+            new_identities = set()
             for domain_name, response in responses:
                 cert_stat = 0
                 domain = (
@@ -100,12 +101,28 @@ class CrtshDataFetcher(DataFetcher):
                         not_after=datetime.fromisoformat(record["not_after"]),
                         serial_number=record["serial_number"],
                     )
-                    ssl_cert.identities = [
-                        SSLCertificateIdentity(identity=identity)
-                        for identity in record["name_value"].splitlines()
-                    ]
+                    for identity in record["name_value"].splitlines():
+                        ssl_cert.identities.append(
+                            SSLCertificateIdentity(identity=identity)
+                        )
+                        if identity != domain_name:
+                            new_identities.add(identity)
                     session.add(ssl_cert)
                     cert_stat += 1
                 self._logger.info(
                     f"Discovered {cert_stat} new associated SSL certificates for {domain_name}."
+                )
+            for identity in (
+                session.query(Domain.domain_name)
+                .filter(Domain.domain_name.in_(domains))
+                .all()
+            ):
+                new_identities.discard(identity)
+
+            for unidentified in new_identities:
+                self._logger.warning(
+                    f"Found new domain {unidentified} in crt.sh, but it is not associated with any domain in the database."
+                )
+                self._logger.warning(
+                    f"You may want to do `domain fetch {unidentified}` to add it to the database."
                 )

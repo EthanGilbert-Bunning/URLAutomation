@@ -79,6 +79,7 @@ class SecurityTrailsDataFetcher(DataFetcher):
                 if domain is None:
                     domain = Domain(domain_name=domain_name)
                     session.add(domain)
+                    # Commit to get a domain_id associated.
                     session.commit()
 
                 domain_id = domain.domain_id
@@ -91,6 +92,7 @@ class SecurityTrailsDataFetcher(DataFetcher):
                     )
                     record = DNSRecord(domain_id=domain_id)
                     session.add(record)
+                    # Commit to get a record_id associated.
                     session.commit()
 
                 dns_stat = defaultdict(int)
@@ -159,6 +161,20 @@ class SecurityTrailsDataFetcher(DataFetcher):
                         )
                         session.add(sub_record)
 
+                    for organization in response["organizations"]:
+                        if organization not in db_organizations:
+                            db_org = Organization(
+                                organization_name=organization,
+                            )
+                            session.add(db_org)
+                            db_organizations[organization] = db_org
+                        else:
+                            db_org = db_organizations[organization]
+                        if db_org not in sub_record.organizations:
+                            sub_record.organizations.append(
+                                db_organizations[organization]
+                            )
+
                     if record_type == "a":
                         for ip in response["values"]:
                             ip_address = ip["ip"]
@@ -167,7 +183,6 @@ class SecurityTrailsDataFetcher(DataFetcher):
                                     ip_address=ip_address,
                                 )
                                 session.add(db_ip)
-                                session.commit()
                                 db_ips[ip_address] = db_ip
                             else:
                                 db_ip = db_ips[ip_address]
@@ -183,7 +198,6 @@ class SecurityTrailsDataFetcher(DataFetcher):
                                     nameserver=nameserver,
                                 )
                                 session.add(db_ns)
-                                session.commit()
                                 db_nameservers[nameserver] = db_ns
                             else:
                                 db_ns = db_nameservers[nameserver]

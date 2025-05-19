@@ -193,9 +193,16 @@ class DomainCommand(SubCommand):
                         self._logger.info(
                             "                - Last seen: %s", a_record.last_seen
                         )
+                        self._logger.info("                - IP Addresses:")
                         for ip_address in a_record.ip_addresses:
                             self._logger.info(
-                                "                - %s", ip_address.ip_address
+                                "                    - %s", ip_address.ip_address
+                            )
+                        self._logger.info("                - Organizations:")
+                        for organization in a_record.organizations:
+                            self._logger.info(
+                                "                    - %s",
+                                organization.organization_name,
                             )
                     self._logger.info("      - NS Records:")
                     for ns_record in dns_record.ns_records:
@@ -208,9 +215,16 @@ class DomainCommand(SubCommand):
                         self._logger.info(
                             "                - Last seen: %s", ns_record.last_seen
                         )
+                        self._logger.info("                - Nameservers:")
                         for nameserver in ns_record.nameservers:
                             self._logger.info(
-                                "                - %s", nameserver.nameserver
+                                "                   - %s", nameserver.nameserver
+                            )
+                        self._logger.info("                - Organizations:")
+                        for organization in ns_record.organizations:
+                            self._logger.info(
+                                "                   - %s",
+                                organization.organization_name,
                             )
 
                 # The SSL certificates associated with the domain
