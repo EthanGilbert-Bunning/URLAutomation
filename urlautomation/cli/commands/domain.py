@@ -36,6 +36,18 @@ class DomainCommand(SubCommand):
             "fetch",
             help="Fetch information about a domain",
         )
+        search = subparsers.add_parser(
+            "search",
+            help="Search for links to a domain",
+        )
+        query = subparsers.add_parser(
+            "query",
+            help="Query information about a domain",
+        )
+        list = subparsers.add_parser(
+            "list",
+            help="List all domains",
+        )
         fetch.add_argument(
             "--dump",
             action="store_true",
@@ -45,14 +57,6 @@ class DomainCommand(SubCommand):
             "--simulate",
             action="store_true",
             help="Simulate the fetch based on hardcoded responses.",
-        )
-        search = subparsers.add_parser(
-            "search",
-            help="Search for links to a domain",
-        )
-        query = subparsers.add_parser(
-            "query",
-            help="Query information about a domain",
         )
         fetch.add_argument(
             "name",
@@ -256,6 +260,18 @@ class DomainCommand(SubCommand):
                         for domain in identity.domains:
                             self._logger.info("          - %s", domain.domain_name)
 
+    def _list_domains(self):
+        """List all domains in the database."""
+        with self._database as session:
+            domains = session.query(Domain).all()
+            if not domains:
+                self._logger.info("No domains found in the database.")
+                return
+
+            for domain in domains:
+                self._logger.info("- Domain: %s", domain.domain_name)
+                self._logger.info("  - ID: %d", domain.domain_id)
+
     def execute(self, command: str):
         """Execute the command."""
         if command == "fetch":
@@ -264,3 +280,5 @@ class DomainCommand(SubCommand):
             self._search_domain()
         elif command == "query":
             self._query_domain()
+        elif command == "list":
+            self._list_domains()
