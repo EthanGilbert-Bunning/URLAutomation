@@ -174,7 +174,6 @@ class SecurityTrailsDataFetcher(DataFetcher):
                                 sub_record.nameservers.append(db_ns)
                                 dns_stat["ns"] += 1
 
-                session.commit()  # Batch commit for performance
                 self._logger.info(
                     f"Discovered {dns_stat['a']} new A records and {dns_stat['ns']} NS records for domain {domain_name}"
                 )
