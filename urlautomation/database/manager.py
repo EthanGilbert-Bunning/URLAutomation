@@ -10,11 +10,12 @@ from urlautomation.database.types import (
     ARecordValue,
     NSRecordValue,
     NSRecordNameserver,
+    ARecordIP,
 )
 from urlautomation.database.fetchers import ALL_DATAFETCHERS
 
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.orm import sessionmaker, Session, aliased
 
 from typing import List, Tuple, Union, Optional
 
@@ -71,31 +72,49 @@ class DatabaseManager:
         self._datafetchers[fetcher].fetch_data(domains, **kwargs)
 
     @staticmethod
-    def get_related_records_by_a_record(
-        session: Session, a_record: ARecordValue
-    ) -> List[DNSRecord]:
-        related_dns_records = (
-            session.query(DNSRecord)
-            .join(ARecordValue)
-            .filter(ARecordValue.ip_addresses.any(ip_id=a_record.ip_addresses[0].ip_id))
+    def _find_ip_associations(session, domain: Domain) -> List[Tuple[str, str, str]]:
+        domain1 = aliased(Domain)
+        domain2 = aliased(Domain)
+        dns_record1 = aliased(DNSRecord)
+        dns_record2 = aliased(DNSRecord)
+        a_record1 = aliased(ARecordValue)
+        a_record2 = aliased(ARecordValue)
+        ip_address = aliased(ARecordIP)
+
+        return (
+            session.query(
+                domain1.domain_name, domain2.domain_name, ip_address.ip_address
+            )
+            .join(dns_record1, domain1.dns_records)
+            .join(a_record1, dns_record1.a_records)
+            .join(ip_address, a_record1.ip_addresses)
+            .join(a_record2, ip_address.a_records)
+            .join(dns_record2, a_record2.dns_record)
+            .join(domain2, dns_record2.domain)
+            .filter(domain1.domain_id == domain.domain_id)
+            .filter(domain1.domain_id != domain2.domain_id)
             .all()
         )
-        return related_dns_records
 
     @staticmethod
-    def get_related_records_by_ns_record(
-        session: Session, ns_record: NSRecordValue
-    ) -> List[DNSRecord]:
-        related_dns_records = (
-            session.query(DNSRecord)
-            .join(NSRecordValue)
-            .filter(
-                NSRecordValue.nameservers.any(
-                    NSRecordNameserver.nameserver_id.in_(
-                        [ns.nameserver_id for ns in ns_record.nameservers]
-                    )
-                )
-            )
+    def _find_nameserver_associations(session, domain: Domain) -> List[Tuple[str, str]]:
+        domain1 = aliased(Domain)
+        domain2 = aliased(Domain)
+        dns_record1 = aliased(DNSRecord)
+        dns_record2 = aliased(DNSRecord)
+        ns_record1 = aliased(NSRecordValue)
+        ns_record2 = aliased(NSRecordValue)
+        nameserver = aliased(NSRecordNameserver)
+
+        return (
+            session.query(domain2.domain_name, nameserver.nameserver)
+            .join(dns_record1, domain1.dns_records)
+            .join(ns_record1, dns_record1.ns_records)
+            .join(nameserver, ns_record1.nameservers)
+            .join(ns_record2, nameserver.ns_records)
+            .join(dns_record2, ns_record2.dns_record)
+            .join(domain2, dns_record2.domain)
+            .filter(domain1.domain_id == domain.domain_id)
+            .filter(domain1.domain_id != domain2.domain_id)
             .all()
         )
-        return related_dns_records

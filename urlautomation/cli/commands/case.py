@@ -184,39 +184,24 @@ class CaseCommand(SubCommand):
                 # Find domains sharing SSL identities
                 # TODO
 
-                # Find domains sharing A Record IPs
-                dns_record = (
-                    session.query(DNSRecord)
-                    .filter_by(domain_id=target_domain.domain_id)
-                    .first()
+                # Find domains sharing A Records (IP Addresses)
+                related_domains_ip = self._database._find_ip_associations(
+                    session, target_domain
                 )
-                if dns_record:
-                    for a_record in dns_record.a_records:
-                        related_dns_records = (
-                            self._database.get_related_records_by_a_record(
-                                session, a_record
-                            )
-                        )
-                        for related_dns_record in related_dns_records:
-                            related_domain = related_dns_record.domain
-                            if related_domain.domain_name != target_domain.domain_name:
-                                relationships["A Record (IP Address)"].append(
-                                    f"{related_domain.domain_name} shares the same A Record IP ({a_record.ip_addresses[0].ip_address}) as {target_domain.domain_name}"
-                                )
+                for domain1_name, domain2_name, ip_address in related_domains_ip:
+                    relationships["A Record (IP Address)"].append(
+                        f"{domain1_name} shares the same A Record IP ({ip_address}) as {domain2_name}"
+                    )
 
-                    # Find domains sharing NS Records (Name Servers)
-                    for ns_record in dns_record.ns_records:
-                        related_dns_records = (
-                            self._database.get_related_records_by_ns_record(
-                                session, ns_record
-                            )
+                # Find domains sharing NS Records (Name Servers)
+                related_domains_ns = self._database._find_nameserver_associations(
+                    session, target_domain
+                )
+                for ns_domain_name, nameserver in related_domains_ns:
+                    if ns_domain_name != target_domain.domain_name:
+                        relationships["NS Record (Name Server)"].append(
+                            f"{ns_domain_name} shares the same NS Record ({nameserver}) as {target_domain.domain_name}"
                         )
-                        for related_dns_record in related_dns_records:
-                            related_domain = related_dns_record.domain
-                            if related_domain.domain_name != target_domain.domain_name:
-                                relationships["NS Record (Name Server)"].append(
-                                    f"{related_domain.domain_name} uses the same Name Server ({ns_record.nameservers[0].nameserver}) as {target_domain.domain_name}"
-                                )
 
             # Print relationships in a grouped format
             for category, relation_list in relationships.items():

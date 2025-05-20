@@ -10,12 +10,6 @@ from typing import List, Tuple
 from urlautomation.cli.subcommand import SubCommand
 from urlautomation.database.types import (
     Domain,
-    ARecordValue,
-    ARecordIP,
-    DNSRecord,
-    NSRecordValue,
-    NSRecordNameserver,
-    a_record_ip_association,
 )
 
 from sqlalchemy.orm import aliased
@@ -76,54 +70,6 @@ class DomainCommand(SubCommand):
             help="Name of the domain to query for",
         )
 
-    @staticmethod
-    def _find_ip_associations(session, domain: Domain) -> List[Tuple[str, str, str]]:
-        domain1 = aliased(Domain)
-        domain2 = aliased(Domain)
-        dns_record1 = aliased(DNSRecord)
-        dns_record2 = aliased(DNSRecord)
-        a_record1 = aliased(ARecordValue)
-        a_record2 = aliased(ARecordValue)
-        ip_address = aliased(ARecordIP)
-
-        return (
-            session.query(
-                domain1.domain_name, domain2.domain_name, ip_address.ip_address
-            )
-            .join(dns_record1, domain1.dns_records)
-            .join(a_record1, dns_record1.a_records)
-            .join(ip_address, a_record1.ip_addresses)
-            .join(a_record2, ip_address.a_records)
-            .join(dns_record2, a_record2.dns_record)
-            .join(domain2, dns_record2.domain)
-            .filter(domain1.domain_id == domain.domain_id)
-            .filter(domain1.domain_id != domain2.domain_id)
-            .all()
-        )
-
-    @staticmethod
-    def _find_nameserver_associations(session, domain: Domain) -> List[Tuple[str, str]]:
-        domain1 = aliased(Domain)
-        domain2 = aliased(Domain)
-        dns_record1 = aliased(DNSRecord)
-        dns_record2 = aliased(DNSRecord)
-        ns_record1 = aliased(NSRecordValue)
-        ns_record2 = aliased(NSRecordValue)
-        nameserver = aliased(NSRecordNameserver)
-
-        return (
-            session.query(domain2.domain_name, nameserver.nameserver)
-            .join(dns_record1, domain1.dns_records)
-            .join(ns_record1, dns_record1.ns_records)
-            .join(nameserver, ns_record1.nameservers)
-            .join(ns_record2, nameserver.ns_records)
-            .join(dns_record2, ns_record2.dns_record)
-            .join(domain2, dns_record2.domain)
-            .filter(domain1.domain_id == domain.domain_id)
-            .filter(domain1.domain_id != domain2.domain_id)
-            .all()
-        )
-
     def _fetch_domain(self):
         domain_name = self._args.name
         assert DOMAIN_NAME_REGEX.match(domain_name), "Invalid domain name provided."
@@ -162,16 +108,17 @@ class DomainCommand(SubCommand):
                 self._logger.info("No domain found with the name %s", domain_name)
                 return
 
-            for domain1_name, domain2_name, ip in self._find_ip_associations(
+            for domain1_name, domain2_name, ip in self._database._find_ip_associations(
                 session, domain
             ):
                 self._logger.info(
                     f"LINK between {domain1_name} -> {domain2_name}, there are A records sharing the IP address {ip}"
                 )
 
-            for ns_domain_name, nameserver in self._find_nameserver_associations(
-                session, domain
-            ):
+            for (
+                ns_domain_name,
+                nameserver,
+            ) in self._database._find_nameserver_associations(session, domain):
                 self._logger.info(
                     f"LINK between {domain_name} -> {ns_domain_name}, there are NS records sharing nameserver {nameserver}"
                 )
