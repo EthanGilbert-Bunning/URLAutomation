@@ -2,7 +2,15 @@
 This module contains the implementation of the DatabaseManager class.
 """
 
-from urlautomation.database.types import Base, Domain, Organization
+from urlautomation.database.types import (
+    Base,
+    Domain,
+    Organization,
+    DNSRecord,
+    ARecordValue,
+    NSRecordValue,
+    NSRecordNameserver,
+)
 from urlautomation.database.fetchers import ALL_DATAFETCHERS
 
 from sqlalchemy import create_engine
@@ -61,3 +69,33 @@ class DatabaseManager:
         if fetcher not in self._datafetchers:
             raise ValueError(f"Fetcher {fetcher} not found.")
         self._datafetchers[fetcher].fetch_data(domains, **kwargs)
+
+    @staticmethod
+    def get_related_records_by_a_record(
+        session: Session, a_record: ARecordValue
+    ) -> List[DNSRecord]:
+        related_dns_records = (
+            session.query(DNSRecord)
+            .join(ARecordValue)
+            .filter(ARecordValue.ip_addresses.any(ip_id=a_record.ip_addresses[0].ip_id))
+            .all()
+        )
+        return related_dns_records
+
+    @staticmethod
+    def get_related_records_by_ns_record(
+        session: Session, ns_record: NSRecordValue
+    ) -> List[DNSRecord]:
+        related_dns_records = (
+            session.query(DNSRecord)
+            .join(NSRecordValue)
+            .filter(
+                NSRecordValue.nameservers.any(
+                    NSRecordNameserver.nameserver_id.in_(
+                        [ns.nameserver_id for ns in ns_record.nameservers]
+                    )
+                )
+            )
+            .all()
+        )
+        return related_dns_records

@@ -45,7 +45,7 @@ class Case(Base):
     __tablename__ = "cases"
 
     case_id = Column(Integer, primary_key=True, autoincrement=True)
-    case_number = Column(String, unique=True)
+    case_name = Column(String, unique=True)
     investigating_officer = Column(String)
     date_opened = Column(DateTime)
     date_closed = Column(DateTime)
