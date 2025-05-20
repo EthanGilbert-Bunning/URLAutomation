@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:92:4e:f7:95:64:7f:c3:7a:b5:0d:37:2a:99:2c:4f:9e:31",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E1",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "May 5 08:30:52 2024",
+    "not_after": "Aug 3 08:30:51 2024"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "CF:33:87:A1:0C:13:7E:95:75:4C:11:28:91:50:73:49:F8:83:E9:15",
+  "authority_key_identifier": "5A:F3:ED:2B:FC:36:C2:37:79:B9:52:30:EA:54:6F:CF:55:CB:2E:AC",
+  "authority_information_access": {
+    "ca_issuers": "http://e1.i.lencr.org/",
+    "ocsp": "http://e1.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "DigiCert Yeti 2024",
+      "log_id": "48:B0:E3:6B:DA:A6:47:34:0F:E5:6A:02:FA:9D:30:EB:",
+      "timestamp": "May 5 09:30:52.276 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Let's Encrypt Oak 2024h2",
+      "log_id": "3F:17:4B:4F:D7:22:47:58:94:1D:65:1C:84:BE:0D:12:",
+      "timestamp": "May 5 09:30:52.271 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "50830522024"
+}

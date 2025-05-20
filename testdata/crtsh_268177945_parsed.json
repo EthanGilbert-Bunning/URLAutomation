@@ -1,0 +1,45 @@
+{
+  "version": "3",
+  "serial_number": "1a:0a:f8:1d:1d:4e:69:4b:97:2f:98:f4:59:16:ea:73",
+  "signature_algorithm": "sha1WithRSAEncryption",
+  "issuer": {
+    "commonName": "COMODO",
+    "organizationName": "COMODO",
+    "countryName": "GB"
+  },
+  "subject": {
+    "commonName": "ssl828324.cloudflaressl.com"
+  },
+  "validity": {
+    "not_before": "Dec 1 00:00:00 2017",
+    "not_after": "Nov 28 23:59:59 2018"
+  },
+  "public_key_info": {
+    "algorithm": "rsaEncryption",
+    "key_size": 2048,
+    "modulus": "00d28737ed893a5f9fb401113e91cceac98d5c200b9827c956adb6797a55187246172530bbef2ad5c283b7f1508c4c69feb148ee04e9747c02bcc9b467026b40b3e2f6f0c7441705e9d7ecd5fe4f24b8a63176eab7431ff1e215c848eaab9c766e27e7d324bb8c87119c12d39d920478c470091b20c1683350152d507a2b4943488e67321ae2631990864e5b0dd5e34c863a2b8ec8be6889db0659e3ccc0907942282c4ab5d56197f1be76af44fcb1b3b90b3cb875959c367426ad3b30a1fdd968168a5eb13b65b2fff819fc7c34d487737fe08178f38e0710418e3612e097d0904096c0fd55a829ce4af5a99a282730690cdfeaef9770a0ec9ffcf19bb0c56cd1",
+    "exponent": 65537
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature, Key Encipherment X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "B2:E8:D7:05:C1:79:94:38:D8:FD:6C:DF:4E:61:5E:42:B6:35:34:6C",
+  "authority_key_identifier": "99:8E:02:95:C5:1E:55:22:7B:87:70:8B:5E:1C:01:C2:76:C4:AE:E8",
+  "authority_information_access": {
+    "ca_issuers": "http://crt.comodoca4.com/COMODODomainValidationLegacyServerCA2.crt",
+    "ocsp": "http://ocsp.comodoca4.com"
+  },
+  "subject_alternative_names": [
+    "ssl828324.cloudflaressl.com",
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "1.3.6.1.4.1.6449.1.2.2.7",
+  "crl_distribution_point": "http://crl.comodoca4.com/COMODODomainValidationLegacyServerCA2.crl",
+  "final_signature_algorithm": "sha1WithRSAEncryption",
+  "final_signature": "ec10000002017"
+}

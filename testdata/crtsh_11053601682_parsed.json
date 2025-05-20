@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:41:db:25:e6:2a:52:41:70:82:f3:42:e5:bb:77:79:a9:dc",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E1",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Nov 10 04:30:31 2023",
+    "not_after": "Feb 8 04:30:30 2024"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "26:CE:CF:96:47:3B:B7:08:39:E7:09:EF:05:CF:2A:3D:D2:12:48:12",
+  "authority_key_identifier": "5A:F3:ED:2B:FC:36:C2:37:79:B9:52:30:EA:54:6F:CF:55:CB:2E:AC",
+  "authority_information_access": {
+    "ca_issuers": "http://e1.i.lencr.org/",
+    "ocsp": "http://e1.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "DigiCert Yeti 2024",
+      "log_id": "48:B0:E3:6B:DA:A6:47:34:0F:E5:6A:02:FA:9D:30:EB:",
+      "timestamp": "Nov 10 05:30:31.780 2023"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2024",
+      "log_id": "EE:CD:D0:64:D5:DB:1A:CE:C5:5C:B7:9D:B4:CD:13:A2:",
+      "timestamp": "Nov 10 05:30:31.787 2023"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "100430312023"
+}

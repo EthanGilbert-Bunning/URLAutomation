@@ -1,0 +1,55 @@
+{
+  "version": "3",
+  "serial_number": "b9:db:ba:6f:44:f5:6b:49:13:c1:93:bd:da:ec:a8:ca",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "WE1",
+    "organizationName": "Google",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Oct 29 13:33:01 2024",
+    "not_after": "Jan 27 13:33:00 2025"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "EE:B8:4D:B3:79:91:5C:36:90:A6:8E:7E:99:F9:1A:76:50:6B:F6:11",
+  "authority_key_identifier": "90:77:92:35:67:C4:FF:A8:CC:A9:E6:7B:D9:80:79:7B:CC:93:F9:38",
+  "authority_information_access": {
+    "ca_issuers": "http://i.pki.goog/we1.crt",
+    "ocsp": "http://o.pki.goog/s/we1/uds"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "*.kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "crl_distribution_point": "http://c.pki.goog/we1/YLlS1L_ZkKk.crl",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2025h1",
+      "log_id": "4E:75:A3:27:5C:9A:10:C3:38:5B:6C:D4:DF:3F:52:EB:",
+      "timestamp": "Oct 29 14:33:01.573 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Sectigo Mammoth 2025h1",
+      "log_id": "13:4A:DF:1A:B5:98:42:09:78:0C:6F:EF:4C:7A:91:A4:",
+      "timestamp": "Oct 29 14:33:01.783 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "291333012024"
+}

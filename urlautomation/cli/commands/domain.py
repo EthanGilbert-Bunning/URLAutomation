@@ -59,6 +59,11 @@ class DomainCommand(SubCommand):
             help="Simulate the fetch based on hardcoded responses.",
         )
         fetch.add_argument(
+            "--quick",
+            action="store_true",
+            help="Fetch only data that can be gathered from minimal requests (e.g. no extended info for SSL certificates).",
+        )
+        fetch.add_argument(
             "name",
             help="Name of the domain to fetch for",
         )
@@ -129,6 +134,7 @@ class DomainCommand(SubCommand):
                 domains=domain_name,
                 dump=self._args.dump,
                 simulate=self._args.simulate,
+                quick=self._args.quick,
             )
             self._database.fetch_data(
                 fetcher="securitytrails",
@@ -136,6 +142,7 @@ class DomainCommand(SubCommand):
                 apikey=self._config["securitytrails_api_key"],
                 dump=self._args.dump,
                 simulate=self._args.simulate,
+                quick=self._args.quick,
             )
         except Exception as e:
             self._logger.exception(
@@ -253,6 +260,39 @@ class DomainCommand(SubCommand):
                         )
                         self._logger.info(
                             "          - Serial Number: %s", ssl_cert.serial_number
+                        )
+
+                        # Additional fields
+                        self._logger.info(
+                            "          - Subject Key Identifier: %s",
+                            ssl_cert.subject_key_identifier,
+                        )
+                        self._logger.info(
+                            "          - Authority Key Identifier: %s",
+                            ssl_cert.authority_key_identifier,
+                        )
+                        self._logger.info(
+                            "          - Public Key Algorithm: %s",
+                            ssl_cert.public_key_algorithm,
+                        )
+                        self._logger.info(
+                            "          - Public Key Size: %s",
+                            ssl_cert.public_key_size,
+                        )
+                        self._logger.info(
+                            "          - Public Key Modulus: %s",
+                            ssl_cert.public_key_modulus,
+                        )
+                        self._logger.info(
+                            "          - Public Key Exponent: %s",
+                            ssl_cert.public_key_exponent,
+                        )
+                        self._logger.info(
+                            "          - Signature Algorithm: %s",
+                            ssl_cert.signature_algorithm,
+                        )
+                        self._logger.info(
+                            "          - Signature: %s", ssl_cert.signature
                         )
 
                         # Log associated domains under the identity

@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:49:ea:66:a0:23:e8:3b:5c:ec:70:76:dc:53:df:3e:8b:cb",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E5",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Aug 31 11:55:40 2024",
+    "not_after": "Nov 29 11:55:39 2024"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "21:FC:2F:5E:A5:78:39:D8:D7:D1:E5:C9:B9:AF:2C:0C:60:B1:C3:8E",
+  "authority_key_identifier": "9F:2B:5F:CF:3C:21:4F:9D:04:B7:ED:2B:2C:C4:C6:70:8B:D2:D7:0D",
+  "authority_information_access": {
+    "ca_issuers": "http://e5.i.lencr.org/",
+    "ocsp": "http://e5.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2024",
+      "log_id": "EE:CD:D0:64:D5:DB:1A:CE:C5:5C:B7:9D:B4:CD:13:A2:",
+      "timestamp": "Aug 31 12:54:10.549 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Sectigo Mammoth 2024h2",
+      "log_id": "DF:E1:56:EB:AA:05:AF:B5:9C:0F:86:71:8D:A8:C0:32:",
+      "timestamp": "Aug 31 12:54:10.783 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "311155402024"
+}

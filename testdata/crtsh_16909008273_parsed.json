@@ -1,0 +1,55 @@
+{
+  "version": "3",
+  "serial_number": "38:81:b0:34:21:e4:b2:af:0e:8d:03:34:c0:20:1f:58",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "WE1",
+    "organizationName": "Google",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Feb 24 18:06:28 2025",
+    "not_after": "May 25 19:02:42 2025"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "E0:AE:1A:31:38:2B:55:8D:3A:77:C3:78:D2:68:B0:00:C7:B3:2E:58",
+  "authority_key_identifier": "90:77:92:35:67:C4:FF:A8:CC:A9:E6:7B:D9:80:79:7B:CC:93:F9:38",
+  "authority_information_access": {
+    "ca_issuers": "http://i.pki.goog/we1.crt",
+    "ocsp": "http://o.pki.goog/s/we1/OIE"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "*.kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "crl_distribution_point": "http://c.pki.goog/we1/DDVSLhL8ZOU.crl",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2025h1",
+      "log_id": "CF:11:56:EE:D5:2E:7C:AF:F3:87:5B:D9:69:2E:9B:E9:",
+      "timestamp": "Feb 24 19:06:29.184 2025"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "DigiCert Wyvern 2025h1",
+      "log_id": "73:20:22:0F:08:16:8A:F9:F3:C4:A6:8B:0A:B2:6A:9A:",
+      "timestamp": "Feb 24 19:06:29.165 2025"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "eb241806282025"
+}

@@ -1,0 +1,41 @@
+{
+  "version": "3",
+  "serial_number": "22:14:db:c1:51:66:ac:12:11:81:6e:33:23:23:5f:02",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "WE1",
+    "organizationName": "Google",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Dec 27 15:22:10 2024",
+    "not_after": "Mar 27 16:20:45 2025"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "D3:8F:CE:91:A5:8F:61:0C:0F:30:B1:C6:F0:1D:48:49:50:55:3B:DB",
+  "authority_key_identifier": "90:77:92:35:67:C4:FF:A8:CC:A9:E6:7B:D9:80:79:7B:CC:93:F9:38",
+  "authority_information_access": {
+    "ca_issuers": "http://i.pki.goog/we1.crt",
+    "ocsp": "http://o.pki.goog/s/we1/IhQ"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "*.kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "crl_distribution_point": "http://c.pki.goog/we1/m4BkrTkPX5Y.crl",
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "ec271522102024"
+}

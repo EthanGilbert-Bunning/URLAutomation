@@ -1,0 +1,56 @@
+{
+  "version": "3",
+  "serial_number": "02:68:b3:53:ef:44:9c:7c:09:f1:cc:db:0c:78:e5:bf",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "CloudFlare",
+    "organizationName": "CloudFlare,",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "sni.cloudflaressl.com"
+  },
+  "validity": {
+    "not_before": "Sep 18 00:00:00 2019",
+    "not_after": "Sep 17 12:00:00 2020"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "9D:C1:58:2F:90:E2:F4:85:8F:AB:A0:92:30:97:3C:AF:92:8D:DE:3C",
+  "authority_key_identifier": "3E:74:2D:1F:CF:45:75:04:7E:3F:C0:A2:87:3E:4C:43:83:51:13:C6",
+  "authority_information_access": {
+    "ca_issuers": "http://cacerts.digicert.com/CloudFlareIncECCCA-2.crt",
+    "ocsp": "http://ocsp.digicert.com"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com",
+    "sni.cloudflaressl.com"
+  ],
+  "certificate_policies": "2.16.840.1.114412.1.1",
+  "crl_distribution_point": "http://crl3.digicert.com/CloudFlareIncECCCA2.crl",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Rocketeer",
+      "log_id": "EE:4B:BD:B7:75:CE:60:BA:E1:42:69:1F:AB:E1:9E:66:",
+      "timestamp": "Sep 18 21:26:20.556 2019"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Cloudflare Nimbus 2020",
+      "log_id": "5E:A7:73:F9:DF:56:C0:E7:B5:36:48:7D:D0:49:E0:32:",
+      "timestamp": "Sep 18 21:26:20.413 2019"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "180000002019"
+}

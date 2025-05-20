@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:23:85:d4:d8:62:62:da:90:09:1f:cb:96:57:5b:af:56:05",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E6",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Jul 3 11:50:28 2024",
+    "not_after": "Oct 1 11:50:27 2024"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "CC:8D:B3:AA:D0:1D:43:B1:E9:18:C2:2F:82:12:43:48:04:BA:15:F5",
+  "authority_key_identifier": "93:27:46:98:03:A9:51:68:8E:98:D6:C4:42:48:DB:23:BF:58:94:D2",
+  "authority_information_access": {
+    "ca_issuers": "http://e6.i.lencr.org/",
+    "ocsp": "http://e6.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Let's Encrypt Oak 2024h2",
+      "log_id": "3F:17:4B:4F:D7:22:47:58:94:1D:65:1C:84:BE:0D:12:",
+      "timestamp": "Jul 3 12:50:29.261 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Sectigo Mammoth 2024h2",
+      "log_id": "DF:E1:56:EB:AA:05:AF:B5:9C:0F:86:71:8D:A8:C0:32:",
+      "timestamp": "Jul 3 12:50:29.465 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "31150282024"
+}

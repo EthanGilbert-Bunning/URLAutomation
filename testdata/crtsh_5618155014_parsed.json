@@ -1,0 +1,57 @@
+{
+  "version": "3",
+  "serial_number": "f9:e6:ab:a0:3a:ff:ff:b1",
+  "signature_algorithm": "sha256WithRSAEncryption",
+  "issuer": {
+    "commonName": "Go",
+    "organizationName": "GoDaddy.com,",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "mailbox01.mxsso.com"
+  },
+  "validity": {
+    "not_before": "Nov 16 09:31:00 2021",
+    "not_after": "Dec 18 09:31:00 2022"
+  },
+  "public_key_info": {
+    "algorithm": "rsaEncryption",
+    "key_size": 2048,
+    "modulus": "00acaf324bac07cea8a29f9018e2f58a969edcb9f73eb4da0c5529412fe1e9a320d010c6cdafdde419a40d6a9c3de0918a58177c24d0b33332c42d6018d89c63eac59ad3d23b12156ea3266c7dc27ba42a753dc9f18dc053f01ddea744cb24a7a29e6bf6f59380ee687ab8e8bd326a3d00aa720b7575df51232f6a2b9679e905eebcf726f2c06c080d69d8f214cecd442e9058d3d921b621eb06b911861cfed6cba1cdc8f30d4578de0ab402a7b3f83f725f9cd73d288d36ace98c6a10f7346b978a3e35c68211bd7447bba7f9128f2a7b4408d9fbc75975fa35de233aa20e75c2d796eb19156a3656d85e097c1b1b542f131e5849c04e7bb603f2d689b721cc15",
+    "exponent": 65537
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature, Key Encipherment X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "9A:BD:E9:B1:60:2F:FF:E2:61:8C:1D:AA:F8:0A:77:B2:CB:D1:5D:F3",
+  "authority_key_identifier": "40:C2:BD:27:8E:CC:34:83:30:A2:33:D7:FB:6C:B3:F0:B4:2C:80:CE",
+  "authority_information_access": {
+    "ca_issuers": "http://certificates.godaddy.com/repository/gdig2.crt",
+    "ocsp": "http://ocsp.godaddy.com/"
+  },
+  "subject_alternative_names": [
+    "mailbox01.mxsso.com",
+    "www.mailbox01.mxsso.com",
+    "autodiscover.kgaming.com",
+    "mail.kgaming.com",
+    "mail.cptim.com",
+    "mail.kgvip.com",
+    "mail.championsports.net",
+    "autodiscover.kgvip.com",
+    "autodiscover.cptim.com",
+    "autodiscover.championsports.net",
+    "mail.manxc.com",
+    "autodiscover.manxc.com",
+    "autodiscover.mxsso.com",
+    "mail.mxsso.com",
+    "mailbox02.mxsso.com"
+  ],
+  "certificate_policies": "2.16.840.1.114413.1.7.23.1",
+  "crl_distribution_point": "http://crl.godaddy.com/gdig2s1-3464.crl",
+  "final_signature_algorithm": "sha256WithRSAEncryption",
+  "final_signature": "160931002021"
+}

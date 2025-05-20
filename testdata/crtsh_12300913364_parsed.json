@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "03:5a:b8:91:0e:e4:b4:73:43:46:d8:eb:da:55:b1:96:ff:f8",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E1",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Mar 7 06:09:45 2024",
+    "not_after": "Jun 5 06:09:44 2024"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "E7:9C:F9:04:52:80:64:A9:C8:98:D3:1C:9C:2F:BD:8F:54:EA:2E:AC",
+  "authority_key_identifier": "5A:F3:ED:2B:FC:36:C2:37:79:B9:52:30:EA:54:6F:CF:55:CB:2E:AC",
+  "authority_information_access": {
+    "ca_issuers": "http://e1.i.lencr.org/",
+    "ocsp": "http://e1.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Let's Encrypt Oak 2024h1",
+      "log_id": "3B:53:77:75:3E:2D:B9:80:4E:8B:30:5B:06:FE:40:3B:",
+      "timestamp": "Mar 7 07:09:45.165 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2024",
+      "log_id": "EE:CD:D0:64:D5:DB:1A:CE:C5:5C:B7:9D:B4:CD:13:A2:",
+      "timestamp": "Mar 7 07:09:45.182 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "70609452024"
+}

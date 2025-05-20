@@ -1,0 +1,60 @@
+{
+  "version": "3",
+  "serial_number": "8f:40:7c:c8:4a:73:98:0d:af:31:23:6e:65:76:4d:7c",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "Sectigo",
+    "organizationName": "Sectigo",
+    "countryName": "GB"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Apr 16 00:00:00 2024",
+    "not_after": "Apr 16 23:59:59 2025"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "B3:27:12:36:0D:55:79:69:83:46:0B:0D:A1:CA:E3:97:B0:DE:BA:D7",
+  "authority_key_identifier": "F6:85:0A:3B:11:86:E1:04:7D:0E:AA:0B:2C:D2:EE:CC:64:7B:7B:AE",
+  "authority_information_access": {
+    "ca_issuers": "http://crt.sectigo.com/SectigoECCDomainValidationSecureServerCA.crt",
+    "ocsp": "http://ocsp.sectigo.com"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "*.kgvip.com"
+  ],
+  "certificate_policies": "1.3.6.1.4.1.6449.1.2.2.7",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2025h1",
+      "log_id": "CF:11:56:EE:D5:2E:7C:AF:F3:87:5B:D9:69:2E:9B:E9:",
+      "timestamp": "Apr 16 00:58:31.812 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Let's Encrypt Oak 2025h1",
+      "log_id": "A2:E3:0A:E4:45:EF:BD:AD:9B:7E:38:ED:47:67:77:53:",
+      "timestamp": "Apr 16 00:58:31.727 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2025h1",
+      "log_id": "4E:75:A3:27:5C:9A:10:C3:38:5B:6C:D4:DF:3F:52:EB:",
+      "timestamp": "Apr 16 00:58:31.711 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "160000002024"
+}

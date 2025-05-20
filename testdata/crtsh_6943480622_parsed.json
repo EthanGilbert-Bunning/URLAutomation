@@ -1,0 +1,42 @@
+{
+  "version": "3",
+  "serial_number": "0f:72:37:be:ad:9f:8b:dc:65:fe:fc:67:8f:2f:fa:5e",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "Cloudflare",
+    "organizationName": "Cloudflare,",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "sni.cloudflaressl.com"
+  },
+  "validity": {
+    "not_before": "Jun 16 00:00:00 2022",
+    "not_after": "Jun 16 23:59:59 2023"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "C0:EB:AF:7B:63:17:BB:F6:5A:E1:92:09:64:7B:D4:A7:D6:C4:27:DD",
+  "authority_key_identifier": "A5:CE:37:EA:EB:B0:75:0E:94:67:88:B4:45:FA:D9:24:10:87:96:1F",
+  "authority_information_access": {
+    "ca_issuers": "http://cacerts.digicert.com/CloudflareIncECCCA-3.crt",
+    "ocsp": "http://ocsp.digicert.com"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "*.kgvip.com",
+    "sni.cloudflaressl.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.2",
+  "crl_distribution_point": "http://crl3.digicert.com/CloudflareIncECCCA-3.crl",
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "160000002022"
+}

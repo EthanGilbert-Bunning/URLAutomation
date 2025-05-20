@@ -1,0 +1,53 @@
+{
+  "version": "3",
+  "serial_number": "ef:84:db:a9:14:29:a7:5d",
+  "signature_algorithm": "sha256WithRSAEncryption",
+  "issuer": {
+    "commonName": "Go",
+    "organizationName": "GoDaddy.com,",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "mail.mxsso.com"
+  },
+  "validity": {
+    "not_before": "Dec 25 17:17:51 2019",
+    "not_after": "Feb 28 14:18:01 2020"
+  },
+  "public_key_info": {
+    "algorithm": "rsaEncryption",
+    "key_size": 2048,
+    "modulus": "00b6a622b0742a388f1bbabb48a962f315a567f5528a039f258dd611ff6baa94c55e08f229e6d7b0f9a03261c4d98b9ac1161bfd8df8ea98537f5df89d9dd0ecc7f0ad7e62235a88eef53c324840bd724cd5e5116161547eaff79b54f2f51ada936ac1c6736bc033e0b11b5c57612b66589851035c2bbe67f0405c5b7af20499b86f11821c55d875e5536b81c37b97793c409e0e4633b69e0c7dedb538588acd799f8f1f91388ea3f8a358817371d9beb516e3f91165b702e09f680c52206725d28523e1629cb18f37ddf88825499c44b94f6bdd7ca16ad610fb2a7c07b889770e8ee63c264e55ad4808e5ad4d3f5b9abccde5010e51b4fa72edbbca378c9324c7",
+    "exponent": 65537
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature, Key Encipherment X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "AE:8C:F3:23:70:02:FF:C5:3D:9C:00:1D:BE:D7:AF:77:8B:E9:9B:E3",
+  "authority_key_identifier": "40:C2:BD:27:8E:CC:34:83:30:A2:33:D7:FB:6C:B3:F0:B4:2C:80:CE",
+  "authority_information_access": {
+    "ca_issuers": "http://certificates.godaddy.com/repository/gdig2.crt",
+    "ocsp": "http://ocsp.godaddy.com/"
+  },
+  "subject_alternative_names": [
+    "mail.mxsso.com",
+    "www.mail.mxsso.com",
+    "mail.manxc.com",
+    "autodiscover.manxc.com",
+    "autodiscover.cptim.com",
+    "autodiscover.kgaming.com",
+    "mail.kgvip.com",
+    "autodiscover.championsports.net",
+    "mailbox01.mxsso.com",
+    "autodiscover.kgvip.com",
+    "mailbox02.mxsso.com"
+  ],
+  "certificate_policies": "2.16.840.1.114413.1.7.23.1",
+  "crl_distribution_point": "http://crl.godaddy.com/gdig2s1-1601.crl",
+  "final_signature_algorithm": "sha256WithRSAEncryption",
+  "final_signature": "ec251717512019"
+}

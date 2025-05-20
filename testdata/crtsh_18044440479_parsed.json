@@ -1,0 +1,55 @@
+{
+  "version": "3",
+  "serial_number": "05:c1:26:5c:e5:fa:ed:94:cb:49:a3:58:dc:ae:97:42:01:f0",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E6",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Apr 24 20:33:03 2025",
+    "not_after": "Jul 23 20:33:02 2025"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "F5:29:F2:86:27:CE:AF:56:A6:1D:BA:A7:8D:F7:CD:AC:4B:CB:82:8F",
+  "authority_key_identifier": "93:27:46:98:03:A9:51:68:8E:98:D6:C4:42:48:DB:23:BF:58:94:D2",
+  "authority_information_access": {
+    "ca_issuers": "http://e6.i.lencr.org/",
+    "ocsp": "http://e6.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "crl_distribution_point": "http://e6.c.lencr.org/113.crl",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Cloudflare Nimbus 2025",
+      "log_id": "CC:FB:0F:6A:85:71:09:65:FE:95:9B:53:CE:E9:B2:7C:",
+      "timestamp": "Apr 24 21:31:33.807 2025"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2025h2",
+      "log_id": "12:F1:4E:34:BD:53:72:4C:84:06:19:C3:8F:3F:7A:13:",
+      "timestamp": "Apr 24 21:31:33.786 2025"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "242033032025"
+}

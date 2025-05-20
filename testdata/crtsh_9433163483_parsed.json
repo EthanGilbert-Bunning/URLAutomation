@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:87:8c:1d:20:48:0e:95:47:81:91:5a:ec:b9:0c:35:18:16",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E1",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "May 17 03:52:10 2023",
+    "not_after": "Aug 15 03:52:09 2023"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "41:49:6D:2F:DE:7D:28:B1:A5:10:46:9E:CF:1E:9C:EC:15:3B:7A:4F",
+  "authority_key_identifier": "5A:F3:ED:2B:FC:36:C2:37:79:B9:52:30:EA:54:6F:CF:55:CB:2E:AC",
+  "authority_information_access": {
+    "ca_issuers": "http://e1.i.lencr.org/",
+    "ocsp": "http://e1.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Cloudflare Nimbus 2023",
+      "log_id": "7A:32:8C:54:D8:B7:2D:B6:20:EA:38:E0:52:1E:E9:84:",
+      "timestamp": "May 17 04:52:10.472 2023"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2023",
+      "log_id": "AD:F7:BE:FA:7C:FF:10:C8:8B:9D:3D:9C:1E:3E:18:6A:",
+      "timestamp": "May 17 04:52:10.473 2023"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "170352102023"
+}

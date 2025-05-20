@@ -1,0 +1,56 @@
+{
+  "version": "3",
+  "serial_number": "04:d2:7f:e3:bd:8e:5f:91:a4:55:59:3d:e4:2a:5e:67:86:92",
+  "signature_algorithm": "sha256WithRSAEncryption",
+  "issuer": {
+    "commonName": "Let's",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "game.pokerkg.com"
+  },
+  "validity": {
+    "not_before": "Aug 15 19:32:43 2020",
+    "not_after": "Nov 13 19:32:43 2020"
+  },
+  "public_key_info": {
+    "algorithm": "rsaEncryption",
+    "key_size": 4096,
+    "modulus": "00b52cf12214a158b4e3c0a4044446111fa4b232874c877862680aad8f6ad7313160df4949a43881b76d922cfc10570d1a6d7a79923ed68186133ffcf7fdabb6ca8b6ae336ba1492b8a1700e4034b0dafde229cb8701be673e406078f2cc10fc2d12790217c4c20b16cf7ce6a011e34a656943b531306901d093102a4359a9e5f015f6a389b944b1266d9c9f0c241bf7edddc9add7b00a47cf3bbd7f246f01186e5f71b921901a310652bf8b781c0f2991107bcad321cbe4cd8f207a2205c5a6815077ccbf4f8f81169ece871ff0f1310397a8557feb874d8a9b7d33ad9241de91c413f2762406d46874da717b004d86748a7289f79484601c817fccde86e76e3e8c5141cd5797e3b811d6de66392aabb0ff28f9092f07e60c952bbc0afdd7a9cd69c560e183fe7fd990b0a90e88d74c9982c0f2d93b4eb621327ff7dbb847d403ff80a75bdccb7daf7164ec4a3ff0e1b909c1eba706c55838056f59daf2491e4455c0986d95d228ceca001c5dea7bd080dea271fd2b95cc6472f42e0a3381e395f9e9326de38924dd10bebfe23dd2c92f5dfee1f4aadbbc5ebf1194cb3d2f705753856410a7b5b4c33ece76127ce15a11815c8ef3594833e0ff2ae56cde912187449ea0dc1cd6d4c966cfdde59328f39bdb0094003cda0869b967fd009de108e2c1ed2ce91a9818b82c9299757a66e534f9b28d4eee0194e4ccf76ef2db0a440d",
+    "exponent": 65537
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature, Key Encipherment X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "7D:03:EA:4D:6B:B9:17:1E:6C:91:15:C3:64:6A:C9:B8:23:94:75:2F",
+  "authority_key_identifier": "A8:4A:6A:63:04:7D:DD:BA:E6:D1:39:B7:A6:45:65:EF:F3:A8:EC:A1",
+  "authority_information_access": {
+    "ca_issuers": "http://cert.int-x3.letsencrypt.org/",
+    "ocsp": "http://ocsp.int-x3.letsencrypt.org"
+  },
+  "subject_alternative_names": [
+    "game.pokerkg.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2020",
+      "log_id": "B2:1E:05:CC:8B:A2:CD:8A:20:4E:87:66:F9:2B:B9:8A:",
+      "timestamp": "Aug 15 20:32:43.321 2020"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Sectigo Mammoth",
+      "log_id": "6F:53:76:AC:31:F0:31:19:D8:99:00:A4:51:15:FF:77:",
+      "timestamp": "Aug 15 20:32:43.378 2020"
+    }
+  ],
+  "final_signature_algorithm": "sha256WithRSAEncryption",
+  "final_signature": "151932432020"
+}

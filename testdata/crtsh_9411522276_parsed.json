@@ -1,0 +1,60 @@
+{
+  "version": "3",
+  "serial_number": "6b:26:8f:59:72:d3:24:58:ea:1c:f3:fe:5a:4f:6e:bd",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "Sectigo",
+    "organizationName": "Sectigo",
+    "countryName": "GB"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "May 17 00:00:00 2023",
+    "not_after": "May 16 23:59:59 2024"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "04:5B:1C:93:CA:BB:66:68:46:C4:EF:26:C9:7C:7F:43:70:06:04:44",
+  "authority_key_identifier": "F6:85:0A:3B:11:86:E1:04:7D:0E:AA:0B:2C:D2:EE:CC:64:7B:7B:AE",
+  "authority_information_access": {
+    "ca_issuers": "http://crt.sectigo.com/SectigoECCDomainValidationSecureServerCA.crt",
+    "ocsp": "http://ocsp.sectigo.com"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "*.kgvip.com"
+  ],
+  "certificate_policies": "1.3.6.1.4.1.6449.1.2.2.7",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2024",
+      "log_id": "76:FF:88:3F:0A:B6:FB:95:51:C2:61:CC:F5:87:BA:34:",
+      "timestamp": "May 17 09:31:29.694 2023"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Cloudflare Nimbus 2024",
+      "log_id": "DA:B6:BF:6B:3F:B5:B6:22:9F:9B:C2:BB:5C:6B:E8:70:",
+      "timestamp": "May 17 09:31:29.796 2023"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Argon 2024",
+      "log_id": "EE:CD:D0:64:D5:DB:1A:CE:C5:5C:B7:9D:B4:CD:13:A2:",
+      "timestamp": "May 17 09:31:29.735 2023"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "170000002023"
+}

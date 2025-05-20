@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:42:25:82:cc:5f:b8:31:e6:e7:f5:13:51:6c:77:ae:2a:44",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E6",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Oct 29 11:39:43 2024",
+    "not_after": "Jan 27 11:39:42 2025"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "15:FA:74:17:01:4F:5D:A2:44:5A:54:77:25:61:1E:13:60:21:36:9A",
+  "authority_key_identifier": "93:27:46:98:03:A9:51:68:8E:98:D6:C4:42:48:DB:23:BF:58:94:D2",
+  "authority_information_access": {
+    "ca_issuers": "http://e6.i.lencr.org/",
+    "ocsp": "http://e6.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2025h1",
+      "log_id": "CF:11:56:EE:D5:2E:7C:AF:F3:87:5B:D9:69:2E:9B:E9:",
+      "timestamp": "Oct 29 12:38:13.645 2024"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Sectigo Mammoth 2025h1",
+      "log_id": "13:4A:DF:1A:B5:98:42:09:78:0C:6F:EF:4C:7A:91:A4:",
+      "timestamp": "Oct 29 12:38:13.858 2024"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "291139432024"
+}

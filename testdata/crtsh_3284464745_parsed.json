@@ -1,0 +1,56 @@
+{
+  "version": "3",
+  "serial_number": "0c:31:78:67:1c:ea:2c:01:d4:bf:74:6b:87:02:b2:4a",
+  "signature_algorithm": "ecdsa-with-SHA256",
+  "issuer": {
+    "commonName": "Cloudflare",
+    "organizationName": "Cloudflare,",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "sni.cloudflaressl.com"
+  },
+  "validity": {
+    "not_before": "Aug 17 00:00:00 2020",
+    "not_after": "Aug 17 12:00:00 2021"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "E0:4E:5F:7F:D5:56:AC:FE:76:BA:08:7E:0E:EF:9B:62:55:AD:6A:39",
+  "authority_key_identifier": "A5:CE:37:EA:EB:B0:75:0E:94:67:88:B4:45:FA:D9:24:10:87:96:1F",
+  "authority_information_access": {
+    "ca_issuers": "http://cacerts.digicert.com/CloudflareIncECCCA-3.crt",
+    "ocsp": "http://ocsp.digicert.com"
+  },
+  "subject_alternative_names": [
+    "kgvip.com",
+    "sni.cloudflaressl.com",
+    "*.kgvip.com"
+  ],
+  "certificate_policies": "2.16.840.1.114412.1.1",
+  "crl_distribution_point": "http://crl3.digicert.com/CloudflareIncECCCA-3.crl",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2021",
+      "log_id": "7D:3E:F2:F8:8F:FF:88:55:68:24:C2:C0:CA:9E:52:89:",
+      "timestamp": "Aug 17 15:43:14.077 2020"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "DigiCert Yeti 2021",
+      "log_id": "5C:DC:43:92:FE:E6:AB:45:44:B1:5E:9A:D4:56:E6:10:",
+      "timestamp": "Aug 17 15:43:14.036 2020"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA256",
+  "final_signature": "170000002020"
+}

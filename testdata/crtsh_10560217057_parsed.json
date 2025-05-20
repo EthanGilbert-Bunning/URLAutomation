@@ -1,0 +1,54 @@
+{
+  "version": "3",
+  "serial_number": "04:b3:bc:0b:48:fe:f3:85:a4:4e:92:a0:7b:26:1d:63:a9:73",
+  "signature_algorithm": "ecdsa-with-SHA384",
+  "issuer": {
+    "commonName": "E1",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "kgvip.com"
+  },
+  "validity": {
+    "not_before": "Sep 12 04:48:45 2023",
+    "not_after": "Dec 11 04:48:44 2023"
+  },
+  "public_key_info": {
+    "algorithm": "id-ecPublicKey"
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "88:34:61:7C:3A:E0:C6:71:D0:3F:6F:31:A4:C6:B8:63:4F:B4:D7:ED",
+  "authority_key_identifier": "5A:F3:ED:2B:FC:36:C2:37:79:B9:52:30:EA:54:6F:CF:55:CB:2E:AC",
+  "authority_information_access": {
+    "ca_issuers": "http://e1.i.lencr.org/",
+    "ocsp": "http://e1.o.lencr.org"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Cloudflare Nimbus 2023",
+      "log_id": "7A:32:8C:54:D8:B7:2D:B6:20:EA:38:E0:52:1E:E9:84:",
+      "timestamp": "Sep 12 05:48:45.486 2023"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Let's Encrypt Oak 2023",
+      "log_id": "B7:3E:FB:24:DF:9C:4D:BA:75:F2:39:C5:BA:58:F4:6C:",
+      "timestamp": "Sep 12 05:48:46.002 2023"
+    }
+  ],
+  "final_signature_algorithm": "ecdsa-with-SHA384",
+  "final_signature": "120448452023"
+}

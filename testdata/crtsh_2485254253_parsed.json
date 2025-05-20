@@ -1,0 +1,56 @@
+{
+  "version": "3",
+  "serial_number": "03:c4:ad:df:84:c3:99:b5:59:d7:f9:df:66:68:cb:4f:5d:b2",
+  "signature_algorithm": "sha256WithRSAEncryption",
+  "issuer": {
+    "commonName": "Let's",
+    "organizationName": "Let's",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "game.pokerkg.com"
+  },
+  "validity": {
+    "not_before": "Feb 17 12:49:26 2020",
+    "not_after": "May 17 12:49:26 2020"
+  },
+  "public_key_info": {
+    "algorithm": "rsaEncryption",
+    "key_size": 2048,
+    "modulus": "00f167a969d816758046a7e9bce77e6826bbff9745959102281b1c2791ee1984e38821e1a5a2cd4a693e671f63d4f73a9faf4e8bae26338bcfc53ce0a346a8d5ed396b1e18866a7c5da5b728e82e3d545c8c83d26b33d6f48fd2d1bcc884d5576404460868e0c01142a2a921f1aa4ac5ed59c4c3c02bfacf4cc0c12cdef0f59d31f57dfc6cf6c21493a3da73817eca5f797a4d547d4c38f8943d219f4f7bdd6ead3bfb3a65bbc3d1ec2c7aaaabdad2c2fc446848d0fa792393b1e327024a3c84b857aa9e6d2bd63740adf6d522913dbcaf20876f7f9ab17abad85c56cec8f453ee6a2abd646b0f8a9b89fa7d9e0b316d222c6a7fc30d600800766e139a8c3b07a9",
+    "exponent": 65537
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature, Key Encipherment X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "7F:FC:23:A5:7F:86:6A:13:98:34:2B:5B:35:E3:C9:F3:C6:2B:DC:F4",
+  "authority_key_identifier": "A8:4A:6A:63:04:7D:DD:BA:E6:D1:39:B7:A6:45:65:EF:F3:A8:EC:A1",
+  "authority_information_access": {
+    "ca_issuers": "http://cert.int-x3.letsencrypt.org/",
+    "ocsp": "http://ocsp.int-x3.letsencrypt.org"
+  },
+  "subject_alternative_names": [
+    "game.pokerkg.com"
+  ],
+  "certificate_policies": "2.23.140.1.2.1",
+  "ct_precertificate_scts": [
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Google Xenon 2020",
+      "log_id": "07:B7:5C:1B:E5:7D:68:FF:F1:B0:C6:1D:23:15:C7:BA:",
+      "timestamp": "Feb 17 13:49:26.495 2020"
+    },
+    {
+      "version": "v1 (0x0)",
+      "log_name": "Sectigo Mammoth",
+      "log_id": "6F:53:76:AC:31:F0:31:19:D8:99:00:A4:51:15:FF:77:",
+      "timestamp": "Feb 17 13:49:26.673 2020"
+    }
+  ],
+  "final_signature_algorithm": "sha256WithRSAEncryption",
+  "final_signature": "eb171249262020"
+}

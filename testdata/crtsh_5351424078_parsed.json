@@ -1,0 +1,44 @@
+{
+  "version": "3",
+  "serial_number": "3838969469578930754",
+  "signature_algorithm": "sha256WithRSAEncryption",
+  "issuer": {
+    "commonName": "Go",
+    "organizationName": "GoDaddy.com,",
+    "countryName": "US"
+  },
+  "subject": {
+    "commonName": "*.kgvip.com"
+  },
+  "validity": {
+    "not_before": "Oct 5 11:19:15 2021",
+    "not_after": "Nov 6 11:19:15 2022"
+  },
+  "public_key_info": {
+    "algorithm": "rsaEncryption",
+    "key_size": 2048,
+    "modulus": "00faa1b3bfcd764a1be1f70445a7c81789107d358f5e25b3e417900d7c9abb0fab1bad5e8e944e72af8ba0eadf1d79506e54ebd931a726e5652cdbd1501fc06a9f18305215fbe0e3f83c84d24e04be45fcc087af8401a266f9c76190bb1a9ef6aa9b76d41c31c284f78ff374828e04a98431053cf03e171b16b4e458022adbb9d6704d8883459ffa7a2d883275d1b2d911b50b92fb85fcee22e9567177e4f5d236ad2c0b86d11beb3f896c80d8ded950092635255eb9a4eaee6673ce2c39e8eb2c7a831a74c8d5d1315f15638ee694e711d69bcfabf364153c13994c8f0bfab2f58bb0b6c1fb9c4b6e3e39b31b12ea58ced7232b5ddcf41af34b153e1e0e024bd7",
+    "exponent": 65537
+  },
+  "extensions": {
+    "key_usage": "critical Digital Signature, Key Encipherment X",
+    "extended_key_usage": "TLS",
+    "basic_constraints": {
+      "CA": false
+    }
+  },
+  "subject_key_identifier": "14:0D:BC:33:D5:6D:AC:27:FD:CD:13:D7:EF:2C:FF:75:C6:90:9B:89",
+  "authority_key_identifier": "40:C2:BD:27:8E:CC:34:83:30:A2:33:D7:FB:6C:B3:F0:B4:2C:80:CE",
+  "authority_information_access": {
+    "ca_issuers": "http://certificates.godaddy.com/repository/gdig2.crt",
+    "ocsp": "http://ocsp.godaddy.com/"
+  },
+  "subject_alternative_names": [
+    "*.kgvip.com",
+    "kgvip.com"
+  ],
+  "certificate_policies": "2.16.840.1.114413.1.7.23.1",
+  "crl_distribution_point": "http://crl.godaddy.com/gdig2s1-3350.crl",
+  "final_signature_algorithm": "sha256WithRSAEncryption",
+  "final_signature": "51119152021"
+}
