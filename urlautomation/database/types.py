@@ -14,6 +14,17 @@ from sqlalchemy.orm import relationship, declarative_base
 Base = declarative_base()
 
 
+ssl_identity_domains = Table(
+    "ssl_identity_domains",
+    Base.metadata,
+    Column(
+        "identity_id", Integer, ForeignKey("ssl_certificates_identities.identity_id")
+    ),
+    Column("domain_id", Integer, ForeignKey("domains.domain_id")),
+    PrimaryKeyConstraint("identity_id", "domain_id"),
+)
+
+
 class Domain(Base):
     __tablename__ = "domains"
 
@@ -21,7 +32,11 @@ class Domain(Base):
     domain_name = Column(String, unique=True)
 
     # Relationships
-    ssl_certificates = relationship("SSLCertificate", back_populates="domain")
+    identities = relationship(
+        "SSLCertificateIdentity",
+        secondary=ssl_identity_domains,
+        back_populates="domains",
+    )
     dns_records = relationship("DNSRecord", back_populates="domain")
     cases = relationship("CaseDomain", back_populates="domain")
 
@@ -189,7 +204,6 @@ class SSLCertificate(Base):
     __tablename__ = "ssl_certificates"
 
     certificate_id = Column(Integer, primary_key=True, autoincrement=True)
-    domain_id = Column(Integer, ForeignKey("domains.domain_id"))
     issuer_ca_id = Column(Integer)
     issuer_name = Column(String)
     common_name = Column(String)
@@ -198,14 +212,37 @@ class SSLCertificate(Base):
     not_after = Column(DateTime)
     serial_number = Column(String)
 
+    subject_key_identifier = Column(String)
+    authority_key_identifier = Column(String)
+    public_key_algorithm = Column(String)
+    public_key_size = Column(Integer)
+    public_key_modulus = Column(Text)  # Can be large, so use Text
+    public_key_exponent = Column(Integer)
+    signature_algorithm = Column(String)
+    signature = Column(Text)
+
     # Relationships
-    domain = relationship("Domain", back_populates="ssl_certificates")
     identities = relationship("SSLCertificateIdentity", back_populates="certificate")
+    ct_log_entries = relationship("CTLogEntry", back_populates="certificate")
 
     # Unique constraint
     __table_args__ = (
         UniqueConstraint("serial_number", "issuer_ca_id", name="unique_ssl_serial"),
     )
+
+
+class CTLogEntry(Base):
+    __tablename__ = "ct_log_entries"
+
+    ct_log_id = Column(Integer, primary_key=True, autoincrement=True)
+    certificate_id = Column(Integer, ForeignKey("ssl_certificates.certificate_id"))
+
+    version = Column(String)
+    log_name = Column(String)
+    log_id = Column(String)
+    timestamp = Column(DateTime)
+
+    certificate = relationship("SSLCertificate", back_populates="ct_log_entries")
 
 
 class SSLCertificateIdentity(Base):
@@ -217,3 +254,11 @@ class SSLCertificateIdentity(Base):
 
     # Relationships
     certificate = relationship("SSLCertificate", back_populates="identities")
+    domains = relationship(
+        "Domain", secondary=ssl_identity_domains, back_populates="identities"
+    )
+
+    # Unique constraint
+    __table_args__ = (
+        UniqueConstraint("certificate_id", "identity", name="unique_identity_per_cert"),
+    )

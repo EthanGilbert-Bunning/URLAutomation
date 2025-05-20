@@ -227,22 +227,34 @@ class DomainCommand(SubCommand):
                                 organization.organization_name,
                             )
 
-                # The SSL certificates associated with the domain
-                self._logger.info("  - SSL Certificates:")
-                for ssl_cert in record.ssl_certificates:
-                    self._logger.info("    - %s", ssl_cert.certificate_id)
-                    self._logger.info("      - Issuer: %s", ssl_cert.issuer_name)
-                    self._logger.info("      - Common Name: %s", ssl_cert.common_name)
-                    self._logger.info("      - Valid From: %s", ssl_cert.not_before)
-                    self._logger.info("      - Valid To: %s", ssl_cert.not_after)
-                    self._logger.info(
-                        "      - Serial Number: %s", ssl_cert.serial_number
-                    )
+                    # Log identities first, then their associated SSL certificates
+                    self._logger.info("  - Identities:")
+                    for identity in record.identities:
+                        self._logger.info("    - %s", identity.identity)
 
-                    # The identities associated with the SSL certificate
-                    self._logger.info("      - Identities:")
-                    for identity in ssl_cert.identities:
-                        self._logger.info("            - %s", identity.identity)
+                        # Log the SSL certificate linked to this identity
+                        ssl_cert = identity.certificate
+                        self._logger.info("      - SSL Certificate:")
+                        self._logger.info(
+                            "          - Certificate ID: %s", ssl_cert.certificate_id
+                        )
+                        self._logger.info(
+                            "          - Issuer: %s", ssl_cert.issuer_name
+                        )
+                        self._logger.info(
+                            "          - Valid From: %s", ssl_cert.not_before
+                        )
+                        self._logger.info(
+                            "          - Valid To: %s", ssl_cert.not_after
+                        )
+                        self._logger.info(
+                            "          - Serial Number: %s", ssl_cert.serial_number
+                        )
+
+                        # Log associated domains under the identity
+                        self._logger.info("      - Associated Domains:")
+                        for domain in identity.domains:
+                            self._logger.info("          - %s", domain.domain_name)
 
     def execute(self, command: str):
         """Execute the command."""

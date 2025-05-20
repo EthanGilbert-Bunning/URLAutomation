@@ -6,6 +6,7 @@ from urlautomation.database.datafetcher import DataFetcher
 from urlautomation.database.types import Domain, SSLCertificate, SSLCertificateIdentity
 
 from typing import Union, Dict, List, Any
+from collections import defaultdict
 from datetime import datetime
 
 import requests
@@ -39,7 +40,7 @@ class CrtshDataFetcher(DataFetcher):
             for domain in domains:
                 with open(f"testdata/crtsh_{domain}.json", "r") as f:
                     response_json = json.load(f)
-                responses.append((domain, self._deduplicate_results(response_json)))
+                responses.extend(self._deduplicate_results(response_json))
         else:
             for domain in domains:
                 request_params = {
@@ -57,72 +58,99 @@ class CrtshDataFetcher(DataFetcher):
                         self._logger.exception(f"Failed to dump response for {domain}")
                         self._logger.info(f"{response_json}")
 
-                responses.append((domain, self._deduplicate_results(response_json)))
+                responses.extend(self._deduplicate_results(response_json))
+
+        cached_domains = {}
+        cached_certs = {}
+        cert_stat = defaultdict(int)
 
         # Process responses, add new records to the database
         with self._database as session:
-            new_identities = set()
-            for domain_name, response in responses:
-                cert_stat = 0
-                domain = (
-                    session.query(Domain).filter_by(domain_name=domain_name).first()
-                )
-                if domain is None:
-                    domain = Domain(domain_name=domain_name)
-                    session.add(domain)
-                    session.commit()
-                domain_id = domain.domain_id
-
-                # Fetch existing serial number / issuing authorities from the database
-                existing_certs = set(
-                    session.query(
-                        SSLCertificate.serial_number, SSLCertificate.issuer_ca_id
-                    )
-                    .filter_by(domain_id=domain_id)
-                    .all()
-                )
-                for record in response:
-                    if (
-                        record["serial_number"],
-                        record["issuer_ca_id"],
-                    ) in existing_certs:
-                        # Skip if the certificate already exists in the database
+            for response in responses:
+                for name_value in response["name_value"].splitlines():
+                    if name_value.startswith("*."):
                         continue
 
-                    ssl_cert = SSLCertificate(
-                        domain_id=domain_id,
-                        issuer_ca_id=record["issuer_ca_id"],
-                        issuer_name=record["issuer_name"],
-                        common_name=record["common_name"],
-                        entry_timestamp=datetime.fromisoformat(
-                            record["entry_timestamp"]
-                        ),
-                        not_before=datetime.fromisoformat(record["not_before"]),
-                        not_after=datetime.fromisoformat(record["not_after"]),
-                        serial_number=record["serial_number"],
-                    )
-                    for identity in record["name_value"].splitlines():
-                        ssl_cert.identities.append(
-                            SSLCertificateIdentity(identity=identity)
+                    # Fetch or create domain
+                    domain = cached_domains.get(name_value)
+                    if domain is None:
+                        domain = (
+                            session.query(Domain)
+                            .filter_by(domain_name=name_value)
+                            .first()
                         )
-                        if identity != domain_name:
-                            new_identities.add(identity)
-                    session.add(ssl_cert)
-                    cert_stat += 1
-                self._logger.info(
-                    f"Discovered {cert_stat} new associated SSL certificates for {domain_name}."
-                )
-            for identity in (
-                session.query(Domain.domain_name)
-                .filter(Domain.domain_name.in_(domains))
-                .all()
-            ):
-                new_identities.discard(identity)
+                        if domain is None:
+                            self._logger.debug(
+                                f"Creating new domain {name_value} in the database."
+                            )
+                            domain = Domain(domain_name=name_value)
+                            session.add(domain)
+                        cached_domains[name_value] = domain
 
-            for unidentified in new_identities:
-                self._logger.warning(
-                    f"Found new domain {unidentified} in crt.sh, but it is not associated with any domain in the database."
-                )
-                self._logger.warning(
-                    f"You may want to do `domain fetch {unidentified}` to add it to the database."
+                    cert_key = (response["serial_number"], response["issuer_ca_id"])
+                    ssl_cert = cached_certs.get(cert_key)
+
+                    if ssl_cert is None:
+                        ssl_cert = (
+                            session.query(SSLCertificate)
+                            .filter_by(
+                                serial_number=response["serial_number"],
+                                issuer_ca_id=response["issuer_ca_id"],
+                            )
+                            .first()
+                        )
+
+                    if ssl_cert:
+                        # Ensure the certificate identity is associated with the domain
+                        identity = (
+                            session.query(SSLCertificateIdentity)
+                            .filter_by(
+                                certificate_id=ssl_cert.certificate_id,
+                                identity=name_value,
+                            )
+                            .first()
+                        )
+
+                        if identity is None:
+                            identity = SSLCertificateIdentity(
+                                identity=name_value, certificate=ssl_cert
+                            )
+                            session.add(identity)
+
+                        if domain not in identity.domains:
+                            identity.domains.append(domain)
+
+                        continue
+                    else:
+                        # Create new SSL certificate
+                        ssl_cert = SSLCertificate(
+                            issuer_ca_id=response["issuer_ca_id"],
+                            issuer_name=response["issuer_name"],
+                            entry_timestamp=datetime.fromisoformat(
+                                response["entry_timestamp"]
+                            ),
+                            not_before=datetime.fromisoformat(response["not_before"]),
+                            not_after=datetime.fromisoformat(response["not_after"]),
+                            serial_number=response["serial_number"],
+                        )
+
+                        session.add(ssl_cert)
+                        session.commit()
+
+                        identity = SSLCertificateIdentity(
+                            identity=name_value, certificate=ssl_cert
+                        )
+                        identity.domains.append(domain)
+
+                        session.add(identity)
+
+                        # Cache certificate to prevent future redundant queries
+                        cached_certs[cert_key] = ssl_cert
+
+                    cert_stat[name_value] += 1
+
+            # Log new certificates added per domain
+            for name_value, count in cert_stat.items():
+                self._logger.info(
+                    f"Found {count} new certificates for domain {name_value}."
                 )
