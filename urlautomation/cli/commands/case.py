@@ -30,8 +30,7 @@ class CaseCommand(SubCommand):
             help="Create a new case",
         )
         create.add_argument(
-            "--name",
-            required=True,
+            "name",
             help="Name of the case to create",
         )
         # Create END
@@ -85,8 +84,7 @@ class CaseCommand(SubCommand):
             help="List domains in a case",
         )
         domains_list.add_argument(
-            "--case",
-            required=True,
+            "case",
             help="Name of the case to list domains from",
         )
 
@@ -100,8 +98,7 @@ class CaseCommand(SubCommand):
             help="Name of the case to add a domain to",
         )
         domains_add.add_argument(
-            "--domains",
-            required=True,
+            "domains",
             nargs="+",
             help="Domain name(s) to add",
         )
@@ -116,8 +113,7 @@ class CaseCommand(SubCommand):
             help="Name of the case to delete a domain from",
         )
         domains_del.add_argument(
-            "--domains",
-            required=True,
+            "domains",
             nargs="+",
             help="Domain name(s) to delete",
         )
@@ -129,8 +125,7 @@ class CaseCommand(SubCommand):
             help="Get information about a case",
         )
         info.add_argument(
-            "--cases",
-            required=True,
+            "cases",
             nargs="+",
             help="Name of the case to get information about",
         )

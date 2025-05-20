@@ -58,7 +58,8 @@ class DomainCommand(SubCommand):
             help="Fetch only data that can be gathered from minimal requests (e.g. no extended info for SSL certificates).",
         )
         fetch.add_argument(
-            "name",
+            "names",
+            nargs="+",
             help="Name of the domain to fetch for",
         )
         search.add_argument(
@@ -71,30 +72,33 @@ class DomainCommand(SubCommand):
         )
 
     def _fetch_domain(self):
-        domain_name = self._args.name
-        assert DOMAIN_NAME_REGEX.match(domain_name), "Invalid domain name provided."
+        for domain_name in self._args.names:
+            if not DOMAIN_NAME_REGEX.match(domain_name):
+                self._logger.warning(
+                    f"Invalid domain name provided (skipping): {domain_name}"
+                )
+                continue
 
-        try:
-            self._database.fetch_data(
-                fetcher="crtsh",
-                domains=domain_name,
-                dump=self._args.dump,
-                simulate=self._args.simulate,
-                quick=self._args.quick,
-            )
-            self._database.fetch_data(
-                fetcher="securitytrails",
-                domains=domain_name,
-                apikey=self._config["securitytrails_api_key"],
-                dump=self._args.dump,
-                simulate=self._args.simulate,
-                quick=self._args.quick,
-            )
-        except Exception as e:
-            self._logger.exception(
-                f"Failed to fetch data for domain {domain_name}: {e}"
-            )
-            return
+            try:
+                self._database.fetch_data(
+                    fetcher="crtsh",
+                    domains=domain_name,
+                    dump=self._args.dump,
+                    simulate=self._args.simulate,
+                    quick=self._args.quick,
+                )
+                self._database.fetch_data(
+                    fetcher="securitytrails",
+                    domains=domain_name,
+                    apikey=self._config["securitytrails_api_key"],
+                    dump=self._args.dump,
+                    simulate=self._args.simulate,
+                    quick=self._args.quick,
+                )
+            except Exception as e:
+                self._logger.exception(
+                    f"Failed to fetch data for domain {domain_name}: {e}"
+                )
 
     def _search_domain(self):
         domain_name = self._args.name

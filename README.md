@@ -66,11 +66,10 @@ positional arguments:
 
 options:
   -h, --help            show this help message and exit
-$ 
 ```
 A similar pattern applies for the subcommands, for example:
 ```
-python urlautomation.py domain fetch --help
+$ python urlautomation.py domain fetch --help
 usage: urlautomation.py domain fetch [-h] [--dump] [--simulate] [--quick] name
 
 positional arguments:
@@ -81,4 +80,22 @@ options:
   --dump      Dump the results of web requests to JSON files.
   --simulate  Simulate the fetch based on hardcoded responses.
   --quick     Fetch only data that can be gathered from minimal requests (e.g. no extended info for SSL certificates).
+```
+
+## Testing functionality with provided dataset
+1. Add the test domain data to the database:
+```
+$ python urlautomation.py domain fetch --simulate game.pokerkg.com gamebusadmin3.zrdqkj.com kgvip.com pokerkg.com pokerkg.dev wwwpoker.sydztc2012.com gamebusadmin3.zrdqkj.com
+```
+2. Create a new case:
+```
+$ python urlautomation.py case create Test
+```
+3. Add the test domains to the case:
+```
+$ python urlautomation.py case domains add --case Test game.pokerkg.com gamebusadmin3.zrdqkj.com kgvip.com pokerkg.com pokerkg.dev wwwpoker.sydztc2012.com
+```
+4. Generate a report:
+```
+$ python urlautomation.py case report --case Test
 ```
