@@ -7,7 +7,7 @@ To get started with the URL Automation project, follow these steps:
     $ pip install -r requirements.txt
     ```
 
-2. Run the script:
+2. Run the script (please see below first):
     ```
     $ python urlautomation.py
     ```
@@ -27,7 +27,7 @@ done by copying the `example_config.json` file to `config.json`, like:
    ```
 
 In this config, you will need to provide both the name of the database file, and
-your [SecurityTrails](https://securitytrails.com/) API key.
+your [SecurityTrails](https://securitytrails.com/) API key. The name of the database file can be left as the default,
 
 Additionally, you may also specify your own config file, with:
 ```
