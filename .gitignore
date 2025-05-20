@@ -178,3 +178,6 @@ cython_debug/
 
 # Primary config file
 config.json
+
+# Generated documentation
+docs/
